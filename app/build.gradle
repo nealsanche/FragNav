@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 25
@@ -19,6 +20,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
 }
 repositories {
     jcenter()
@@ -32,4 +36,5 @@ dependencies {
     compile 'com.roughike:bottom-bar:2.0.2'
     //compile 'com.ncapdevi:frag-nav:1.2.3'
     compile project(':frag-nav')
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

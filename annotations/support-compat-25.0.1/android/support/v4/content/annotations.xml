@@ -1,0 +1,38 @@
+<root>
+    <item name='android.support.v4.content.IntentCompat EXTRA_HTML_TEXT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.ModernAsyncTask.Status PENDING'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.IntentCompat EXTRA_CHANGED_PACKAGE_LIST'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.IntentCompat ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.IntentCompat ACTION_EXTERNAL_APPLICATIONS_AVAILABLE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.IntentCompat CATEGORY_LEANBACK_LAUNCHER'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.ModernAsyncTask.Status RUNNING'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.ContextCompat int checkSelfPermission(android.content.Context, java.lang.String) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.IntentCompat EXTRA_CHANGED_UID_LIST'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.ModernAsyncTask.Status FINISHED'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.ContextCompat int checkSelfPermission(android.content.Context, java.lang.String) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.content.SharedPreferencesCompat.EditorCompat void apply(android.content.SharedPreferences.Editor) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

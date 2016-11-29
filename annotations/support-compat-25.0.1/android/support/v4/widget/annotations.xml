@@ -1,0 +1,8 @@
+<root>
+    <item name='android.support.v4.widget.ScrollerCompat android.support.v4.widget.ScrollerCompat create(android.content.Context)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='android.support.v4.widget.ScrollerCompat android.support.v4.widget.ScrollerCompat create(android.content.Context, android.view.animation.Interpolator)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

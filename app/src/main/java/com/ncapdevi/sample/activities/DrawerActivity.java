@@ -14,11 +14,11 @@ import com.ncapdevi.sample.fragments.BaseFragment;
 public class DrawerActivity extends AppCompatActivity implements BaseFragment.FragmentNavigation {
 
     //Better convention to properly name the indices what they are in your app
-    private final int INDEX_RECENTS = FragNavController.TAB1;
-    private final int INDEX_FAVORITES = FragNavController.TAB2;
-    private final int INDEX_NEARBY = FragNavController.TAB3;
-    private final int INDEX_FRIENDS = FragNavController.TAB4;
-    private final int INDEX_FOOD = FragNavController.TAB5;
+    private final int INDEX_RECENTS = FragNavController.Companion.getTAB1();
+    private final int INDEX_FAVORITES = FragNavController.Companion.getTAB2();
+    private final int INDEX_NEARBY = FragNavController.Companion.getTAB3();
+    private final int INDEX_FRIENDS = FragNavController.Companion.getTAB4();
+    private final int INDEX_FOOD = FragNavController.Companion.getTAB5();
 
     private FragNavController mNavController;
     private DrawerLayout mDrawerLayout;
