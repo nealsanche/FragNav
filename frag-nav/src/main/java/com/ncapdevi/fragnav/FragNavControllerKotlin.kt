@@ -24,18 +24,10 @@ import java.util.Stack
 
  * Originally Created March 2016
  */
-class FragNavController
-//region Construction and setup
+class FragNavControllerKotlin  private constructor (private val mFragmentManager: FragmentManager, @IdRes private val mContainerId: Int, numberOfTabs: Int) {
 
-/**
- * @param fragmentManager FragmentManager to be used
- * *
- * @param containerId     The resource ID of the layout in which the fragments will be placed
- * *
- * @param numberOfTabs    The number of different fragment stacks to be managed (maximum of five)
- */
-private constructor(private val mFragmentManager: FragmentManager, @IdRes private val mContainerId: Int, numberOfTabs: Int) {
-    private val mFragmentStacks: MutableList<Stack<Fragment>>?
+
+    //region Construction and setup
 
     @TabIndex
     private var mSelectedTabIndex = -1L
@@ -44,7 +36,6 @@ private constructor(private val mFragmentManager: FragmentManager, @IdRes privat
     private var mCurrentDialogFrag: DialogFragment? = null
 
 
-    private var mRootFragmentListener: RootFragmentListener? = null
     private var mTransactionListener: TransactionListener? = null
 
     @Transit
@@ -52,9 +43,16 @@ private constructor(private val mFragmentManager: FragmentManager, @IdRes privat
 
     private var mExecutingTransaction: Boolean = false
 
+    private val mFragmentStacks: MutableList<Stack<Fragment>>
+
     init {
         mFragmentStacks = ArrayList<Stack<Fragment>>(numberOfTabs)
     }
+
+    private var mRootFragmentListener: RootFragmentListener = null
+
+
+
 
     /**
      * @param savedInstanceState savedInstanceState to allow for recreation of FragNavController and its fragments if possible
@@ -66,7 +64,8 @@ private constructor(private val mFragmentManager: FragmentManager, @IdRes privat
      * @param rootFragment       A single root fragment. This library can still be helpful when mangiging a single stack of fragments.
      */
 
-    constructor(savedInstanceState: Bundle, fragmentManager: FragmentManager, @IdRes containerId: Int, rootFragment: Fragment) : this(fragmentManager, containerId, 1) {
+
+    constructor(savedInstanceState: Bundle?,  fragmentManager: FragmentManager, @IdRes containerId: Int, rootFragment: Fragment) : this(fragmentManager, containerId, 1) {
 
         //Attempt to restore from bundle, if not, initialize
         val rootFragments = ArrayList<Fragment>(1)
@@ -75,7 +74,7 @@ private constructor(private val mFragmentManager: FragmentManager, @IdRes privat
         if (!restoreFromBundle(savedInstanceState, rootFragments)) {
             val stack = Stack<Fragment>()
             stack.add(rootFragment)
-            mFragmentStacks!!.add(stack)
+            mFragmentStacks.add(stack)
             initialize(TAB1)
         }
     }
@@ -136,6 +135,7 @@ private constructor(private val mFragmentManager: FragmentManager, @IdRes privat
             initialize(startingIndex)
         }
     }
+
 
     /**
 
@@ -748,8 +748,6 @@ private constructor(private val mFragmentManager: FragmentManager, @IdRes privat
     @IntDef(TAB1, TAB2, TAB3, TAB4, TAB5)
     @Retention(AnnotationRetention.SOURCE)
     annotation class TabIndex
-
-
 
 
     // Declare Transit Styles
