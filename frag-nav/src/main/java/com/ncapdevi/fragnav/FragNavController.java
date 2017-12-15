@@ -143,7 +143,7 @@ public class FragNavController {
 
             mCurrentFrag = fragment;
             if (mTransactionListener != null) {
-                mTransactionListener.onTabTransaction(mCurrentFrag, mSelectedTabIndex);
+                mTransactionListener.onTabTransaction(this, mCurrentFrag, mSelectedTabIndex);
             }
         }
     }
@@ -178,7 +178,7 @@ public class FragNavController {
 
             mCurrentFrag = fragment;
             if (mTransactionListener != null) {
-                mTransactionListener.onFragmentTransaction(mCurrentFrag, TransactionType.PUSH);
+                mTransactionListener.onFragmentTransaction(this, mCurrentFrag, TransactionType.PUSH);
             }
 
         }
@@ -273,7 +273,7 @@ public class FragNavController {
 
         mCurrentFrag = fragment;
         if (mTransactionListener != null) {
-            mTransactionListener.onFragmentTransaction(mCurrentFrag, TransactionType.POP);
+            mTransactionListener.onFragmentTransaction(this, mCurrentFrag, TransactionType.POP);
         }
     }
 
@@ -342,7 +342,7 @@ public class FragNavController {
 
             mCurrentFrag = fragment;
             if (mTransactionListener != null) {
-                mTransactionListener.onFragmentTransaction(mCurrentFrag, TransactionType.POP);
+                mTransactionListener.onFragmentTransaction(this, mCurrentFrag, TransactionType.POP);
             }
         }
     }
@@ -384,7 +384,7 @@ public class FragNavController {
             mCurrentFrag = fragment;
 
             if (mTransactionListener != null) {
-                mTransactionListener.onFragmentTransaction(mCurrentFrag, TransactionType.REPLACE);
+                mTransactionListener.onFragmentTransaction(this, mCurrentFrag, TransactionType.REPLACE);
 
             }
         }
@@ -521,7 +521,7 @@ public class FragNavController {
 
         mCurrentFrag = fragment;
         if (mTransactionListener != null) {
-            mTransactionListener.onTabTransaction(mCurrentFrag, mSelectedTabIndex);
+            mTransactionListener.onTabTransaction(this, mCurrentFrag, mSelectedTabIndex);
         }
     }
 
@@ -914,9 +914,9 @@ public class FragNavController {
 
     public interface TransactionListener {
 
-        void onTabTransaction(Fragment fragment, int index);
+        void onTabTransaction(@NonNull FragNavController controller, @NonNull Fragment fragment, int index);
 
-        void onFragmentTransaction(Fragment fragment, TransactionType transactionType);
+        void onFragmentTransaction(@NonNull FragNavController controller, @NonNull Fragment fragment, @NonNull TransactionType transactionType);
     }
 
     public static final class Builder {

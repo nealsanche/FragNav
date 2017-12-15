@@ -97,20 +97,20 @@ public class BottomTabsActivity extends AppCompatActivity implements BaseFragmen
     }
 
     @Override
-    public void onTabTransaction(Fragment fragment, int index) {
+    public void onTabTransaction(FragNavController controller, Fragment fragment, int index) {
         // If we have a backstack, show the back button
-        if (getSupportActionBar() != null && mNavController != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(!mNavController.isRootFragment());
+        if (getSupportActionBar() != null && controller != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(!controller.isRootFragment());
         }
     }
 
 
     @Override
-    public void onFragmentTransaction(Fragment fragment, FragNavController.TransactionType transactionType) {
+    public void onFragmentTransaction(FragNavController controller, Fragment fragment, FragNavController.TransactionType transactionType) {
         //do fragmentty stuff. Maybe change title, I'm not going to tell you how to live your life
         // If we have a backstack, show the back button
-        if (getSupportActionBar() != null && mNavController != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(!mNavController.isRootFragment());
+        if (getSupportActionBar() != null && controller != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(!controller.isRootFragment());
         }
     }
 
